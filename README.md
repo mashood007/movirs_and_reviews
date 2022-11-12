@@ -1,24 +1,45 @@
-# README
+# Movies And Reviews
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a ruby on rails application for summarizing movies data
 
-Things you may want to cover:
+Technologies:
 
-* Ruby version
+* Ruby on rails
+* Ruby
+* Postgresql
+* HTML
+* Bootstrap
+* Javascript/Jquery
 
-* System dependencies
+How to run
+* Checkout code
+* Bundle install
+* rails db:setup
+* rails server
 
-* Configuration
+Model
 
-* Database creation
+* Movie
+    - movies has many reviews
+    - movies has many actors
+    - movies belongs to director
+    - Movies belongs to location
+* User
+    - User has many reviews
+* Artist : used to store artists such as actors and directors
+    - Parent class for Actor and Direct
+* Actor : Which is mapped with artists table having type 'Actor'
+    - has many movies through movie actors
+* Director : Which is mapped with artists table having type 'Director'
+    - Director has many movies
+* Location
+    - Has many movies
+* MovieActor
+    - Used to connect movies and actors
 
-* Database initialization
+Services
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* ImportMoviesService
+    - Used to import movies CSV file and insert data
+* ImportReviewsService
+    - Used to import reviews CSV file and insert data
