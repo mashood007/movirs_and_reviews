@@ -1,0 +1,10 @@
+<% if @result == :success %>
+  $(".alert").removeClass("d-none").removeClass("alert-danger")
+  $(".alert").addClass("alert-success").html("movies uploaded")
+<% else %>
+  $(".alert").removeClass("d-none").removeClass("alert-success")
+  $(".alert").addClass("alert-danger").html("movies uploading has been failed")
+<% end %>
+setTimeout(function() {
+  $('.alert').addClass('d-none');
+},2000);

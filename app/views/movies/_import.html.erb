@@ -1,0 +1,8 @@
+
+<%= form_tag "#{type}/import", multipart: true, class: 'border p-3 m-1', remote: true do %>
+  <div class="form-group">
+    <label> Upload CSV File </label>
+    <%= file_field_tag :file, class: 'form-control', required: true, accept: 'text/csv' %>
+  </div>
+  <div class="row mt-2"><%= submit_tag "Import #{type}", class: 'btn btn-info w-50 m-auto' %></div>
+<% end %>

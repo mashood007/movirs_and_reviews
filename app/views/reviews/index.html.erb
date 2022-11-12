@@ -1,0 +1,14 @@
+<h1>Reviews</h1>
+<h6>Summary</h6>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Star</th>
+      <th>Count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render @reviews %>
+  </tbody>
+</table>
+<h6 class="mt-2 text-success">Average Review is <%= @average_review %></h6>

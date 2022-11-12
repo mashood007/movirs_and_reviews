@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="col"> <h5>Movie:</h5> <%= @movie.name %> </div>
+  <div class="col"> <h5>Year:</h5> <%= @movie.year %> </div>
+  <div class="col"> <h5>Director:</h5> <%= @movie.director.name %> </div>
+</div>
+<div class="row">
+  <div class="col-12"><h5>Actors</h5></div>
+  <% @movie.actors.each do |actor| %>
+    <div class="col-4 pl-3"><%= actor.name %></div>
+  <% end %>
+</div>
+<div class="row">
+  <div class="col"> <%= @movie.description %> </div>
+</div>

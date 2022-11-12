@@ -1,0 +1,37 @@
+<div class='row m-3'>
+  <div class="col-3 offset-6">
+    <button id='import-movie' class='btn btn-success float-right'>Import movies</button>
+  </div>
+  <div class="col-3">
+    <button id='import-review' class='btn btn-info float-right'>Import reviews</button>
+  </div>
+  <div id='import-form' class='d-none'>
+  </div>
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Year</th>
+      <th>Director</th>
+      <th>#</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render @movies %>
+  </tbody>
+</table>
+<script>
+$(document).ready(function(){
+  $('#import-movie').click(function(){
+    $("#import-form").html("<%= j (render 'import', type: 'movies') %>");
+    $("#import-form").toggleClass('d-none')
+  });
+
+  $('#import-review').click(function(){
+    $("#import-form").html("<%= j (render 'import', type: 'reviews') %>");
+    $("#import-form").toggleClass('d-none')
+  });
+})
+</script>

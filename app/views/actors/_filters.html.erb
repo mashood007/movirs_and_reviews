@@ -1,0 +1,7 @@
+
+<%= form_tag actors_path, method: :get, class: 'row border p-3 m-1', remote: true do %>
+  <div class="form-group">
+    <%= text_field_tag :search, nil, placeholder: "search name", class: 'form-control' %>
+  </div>
+  <div class="row mt-2"><%= submit_tag "Search", class: 'btn btn-info w-50 m-auto' %></div>
+<% end %>
